@@ -46,4 +46,19 @@ let phone = ['apple' , 'Samsung' , 'Redmi' , 'vivo']
 // console.log(rare.flat(Infinity))  // Converts inner child to one array 
 
 console.log(Array.isArray([1]));
-console.log(Array.from());
+console.log(Array.from('test'));
+console.log(Array.from({name : "Urvansh"}));
+
+
+
+let s1 = 100;
+let s2 = 200;
+let s3 = 300;
+
+console.log(Array.of(s1 , s2 ,s3))
+
+
+let arr = new Array(11);
+// let arr = new Array(1, 2, 3);
+
+console.log(arr); 

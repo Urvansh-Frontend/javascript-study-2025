@@ -74,7 +74,9 @@ const newarr = [300, 400, 500, 870]
 
 function commonArr(anyArr) {
 
-    console.log(`${anyArr[2]}`)
+    console.log(`${anyArr[1]}`)
 }
 
-commonArr(newarr)
+commonArr([
+    500, "Urvansh", true
+])

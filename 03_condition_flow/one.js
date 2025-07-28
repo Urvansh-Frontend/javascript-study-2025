@@ -58,11 +58,10 @@ const loggedinemail = true
 
 //  each should be true 
 if (userVerified && debitCard) {
-
     console.log("Yes you are elligible")
 }
+
 //  This is OR means one should be true 
 if (loggedinemail || loggedinemail) {
-
     console.log("Welcome")
 }

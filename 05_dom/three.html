@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--  DOCUMENT OBJECT MODAL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<style>
+
+    body{
+        padding: 2rem;
+background-color: #1d1c1c;
+color: #fff;
+
+    }
+</style>
+<body>
+
+</body>
+<script>
+
+
+    function createCustomHeading(text = "Hello World", dataAttrValue = "Urvansh", bgColor = "#fff") {
+        const jselement = document.createElement('h1');
+        jselement.className = "title";
+        jselement.id = "id-" + Math.round(Math.random() * 10 + 1);
+        jselement.setAttribute("data-attr", dataAttrValue);
+
+        // Set inline background color
+        jselement.style.backgroundColor = bgColor;
+
+        const addText = document.createTextNode(text);
+        jselement.appendChild(addText);
+
+        console.log(jselement.outerHTML);
+
+        document.body.appendChild(jselement);
+
+        return jselement;
+    }
+
+    // Array of 5 different background colors
+    const colors = ["green", "blue", "red", "pink", "magenta"];
+
+    // Loop to create 5 headings with different background colors
+    for (let i = 0; i < 5; i++) {
+        createCustomHeading(`Hello World ${i + 1}`, `Urvansh-${i + 1}`, colors[i]);
+    }
+</script>
+</html>

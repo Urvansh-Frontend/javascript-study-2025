@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--  DOCUMENT OBJECT MODAL -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Learning</title>
+  </head>
+  <style>
+    body {
+      padding: 2rem;
+      background-color: #1d1c1c;
+      color: #fff;
+    }
+  </style>
+  <body>
+    <ul class="language">
+      <li>Javascript</li>
+      <li>HTML</li>
+    </ul>
+  </body>
+  <script>
+    // const parent = document.querySelector(".language");
+    // const element = document.createElement('li');
+    // const addText = document.createTextNode("Python");
+    // element.appendChild(addText);
+    // parent.appendChild(element)
+
+    function addLanguage(langname) {
+      const parent = document.querySelector(".language");
+      const element = document.createElement("li");
+      element.innerHTML = `${langname}`;
+      parent.appendChild(element);
+    }
+    addLanguage("Hello Js");
+
+    function optimise(langname) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langname));
+      document.querySelector(".language").appendChild(li);
+    }
+    optimise("golang");
+
+    //  EDIT
+
+    const child3 = document.querySelector("li:nth-child(3)");
+    const newelement = document.createElement("li");
+    newelement.appendChild(document.createTextNode("URVANSH"));
+    child3.replaceWith(newelement);
+
+
+
+    const child1 = document.querySelector("li:nth-child(2)");
+    child1.innerHTML = 'Ruby';
+
+    const lastchild = document.querySelector("li:last-child")
+    lastchild.remove();
+  </script>
+</html>

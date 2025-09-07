@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS EVENTS</title>
+</head>
+
+<body style="background-color: #414141; color: #fff">
+  <h2>Cool Images</h2>
+  <div>
+    <ul id="images">
+      <li>
+        <img id="wolf" src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=400&h=300&fit=crop"
+          alt="wolf" />
+      </li>
+      <li>
+        <img id="building" src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400&h=300&fit=crop"
+          alt="Building" />
+      </li>
+      <li>
+        <img id="technology" src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop"
+          alt="Technology" />
+      </li>
+      <li>
+        <img id="forest" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=300&fit=crop"
+          alt="Forest" />
+      </li>
+      <li>
+        <img id="travel" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop"
+          alt="Beach Travel" />
+      </li>
+      <li>
+        <img id="food" src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=400&h=300&fit=crop"
+          alt="Food" />
+      </li>
+      <li>
+        <img id="people" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop"
+          alt="People" />
+      </li>
+      <li>
+        <a href="http://google.com" style="color: #fff; font-size: 50px" id="google">Google</a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+
+  // document.getElementById('wolf').onclick = function () {
+  //   alert('OWL is now Clicked')
+  // }
+
+  // attachEvent 
+
+  // document.getElementById("wolf").addEventListener("click", function () {
+  //   alert("wolf Is clicked");
+  // }, false);
+
+  //  type  , timestamp , defaultPrevented 
+  //  target, toelement , srcElement , currentTarget 
+  //  ClientX , ClientY , ScrenX , ScreenY
+  // altkey , ctrlkey, shifkey , keycode 
+
+  //  EVENT propagtion works on true and false
+  // True = Capturing - Top to bottom
+  //  False = Bubling Bottom to top or Inside to outside 
+
+
+  // document.getElementById("images").addEventListener("click", function (e) {
+  //   console.log('Clicked on Images - 1');
+  // }, false);
+
+
+  // document.getElementById("wolf").addEventListener("click", function (e) {
+  //   console.log('Clicked on Wolf - 2');
+
+  //   e.stopPropagation();
+  // }, false);
+
+  document.getElementById('google').addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("google Clicked")
+  })
+
+  document.querySelector('#images').addEventListener("click", function (e) {
+    console.log(e.target.tagName)
+    if (e.target.tagName === "IMG") {
+      console.log(e.target.id)
+      e.target.parentNode.remove();
+    }
+  }, false)
+
+
+
+</script>
+
+</html>

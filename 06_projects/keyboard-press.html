@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Key is Pressed</title>
+</head>
+
+<body>
+
+    <h1>Press and check which key is pressed</h1>
+    <div id="table">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Key Code</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- New rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const tableBody = document.querySelector('#table-body');
+        const maxRows = 5;
+
+        window.addEventListener("keydown", (e) => {
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+            <td>${e.key === " " ? "Space" : e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        `;
+
+            tableBody.appendChild(newRow);
+
+            // If more than maxRows, remove the oldest row
+            if (tableBody.rows.length > maxRows) {
+                tableBody.removeChild(tableBody.firstElementChild);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
